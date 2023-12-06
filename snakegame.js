@@ -29,13 +29,11 @@ function init() {
 }
 
 function resetGame() {
-    fetch("/reset", {
-        method: "POST",
-        headers: {
-            Accept: "application/json",
-            "Content-Type": "application/json"
-        }
-    })
+    fetch("/reset", {method: "POST"})
+}
+
+function resetConnections() {
+    fetch("/resetConnections", {method: "POST"})
 }
 
 function tryRender() {
@@ -118,9 +116,7 @@ window.addEventListener("keydown", function (event) {
 // then dispatches event to window
 //https://stackoverflow.com/questions/4416505/how-to-take-keyboard-input-in-javascript
 
-window.addEventListener("beforeunload", bye);
-
-function bye() {
+window.addEventListener("beforeunload", (event) => {
     fetch("/bye", {
         method: "POST",
         headers: {
@@ -129,4 +125,5 @@ function bye() {
         },
         body: JSON.stringify({player: playerNum})
     })
-}
+    event.returnValue = null
+});

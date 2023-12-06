@@ -4,7 +4,7 @@ const bodyParser = require("body-parser")
 
 const app = express()
 
-var d1 = 2
+var d1 = 0
 var d2 = 0
 var appleX = 5
 var appleY = 5
@@ -13,7 +13,7 @@ var score2 = 1
 var player1Lose = false
 var player2Lose = false
 const xPositions1 = new Array(20).fill(1)
-const yPositions1 = new Array(20).fill(1)
+const yPositions1 = new Array(20).fill(18)
 const xPositions2 = new Array(20).fill(18)
 const yPositions2 = new Array(20).fill(18)
 var player1Exists = false
@@ -106,7 +106,7 @@ app.get("/snakegame.js", (req, res) => {
 })
 
 app.post("/reset", (req, res) => {
-    d1 = 2
+    d1 = 0
     d2 = 0
     appleX = 5
     appleY = 5
@@ -118,10 +118,13 @@ app.post("/reset", (req, res) => {
     yPositions1[0] = 1
     xPositions2[0] = 18
     yPositions2[0] = 18
+    generateApple()
+    res.send()
+})
+
+app.post("/resetConnections", (req, res) => {
     player1Exists = false
     player2Exists = false
-    generateApple()
-
     res.send()
 })
 

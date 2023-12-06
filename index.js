@@ -115,7 +115,7 @@ app.post("/reset", (req, res) => {
     player1Lose = false
     player2Lose = false
     xPositions1[0] = 1
-    yPositions1[0] = 1
+    yPositions1[0] = 18
     xPositions2[0] = 18
     yPositions2[0] = 18
     generateApple()

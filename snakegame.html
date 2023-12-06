@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Multiplayer Snake</title>
+  </head>
+  <style>
+    .container {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    body {
+        color: white;
+        font: 1em "Courier New", monospace;
+        margin: 0;
+        padding: 0;
+        background-color: #333333;
+        box-sizing: border-box;
+    }
+    canvas {
+        background-color: #000000;
+    }
+    button {
+        margin-top: 1em;
+        padding: 0.5em 1em;
+        border: 1px solid;
+        border-radius: 0px;
+        color: white;
+        background-color: #333333;
+        cursor: pointer;
+    }
+  </style>
+  <body onload="init()">
+    <div class="container">
+      <h1>Multiplayer Snake</h1>
+      </h1>
+      <canvas id="canvas" width="400" height="400"></canvas>
+      <button onClick="resetGame()">Reset Game</button>
+      <h2 id="playerNotif"></h2>
+    </div>
+    <script src="/snakegame.js"></script>
+  </body>
+</html>

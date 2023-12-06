@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "undefined/subscriptions/2c498828-b28a-491e-af63-5102f1482e62/resourceGroups/multiplayer-snake-rg/providers/Microsoft.Web/sites/multiplayer-snake",
+    "appService.deploySubpath": "."
+}
